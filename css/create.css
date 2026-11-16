@@ -1,0 +1,233 @@
+/* ==========================
+   MAIN LAYOUT
+========================== */
+
+.create-container {
+  min-height: calc(100vh - 95px);
+  min-height: calc(100svh - 95px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+  padding: 30px 20px;
+}
+
+/* ==========================
+   FORM
+========================== */
+
+.create-form {
+  width: min(320px, 100%);
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  background: rgba(245, 197, 241, 0.82);
+  border: 1px solid #fddee6;
+  border-radius: 20px;
+
+  box-shadow: 0 5px 15px rgba(65, 34, 92, 0.17);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.create-form h1 {
+  margin: 0 0 5px;
+
+  text-align: center;
+  color: #41225c;
+
+  font-family: "Great Vibes", cursive;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.create-form input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+
+  border: 1px solid #fddee6;
+  border-radius: 12px;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.85);
+  color: #41225c;
+
+  font-size: 16px;
+}
+
+.create-form input::placeholder {
+  color: #9870a5;
+}
+
+.create-form input:focus {
+  border-color: #9870a5;
+  box-shadow: 0 0 0 3px rgba(152, 112, 165, 0.15);
+}
+
+/* ==========================
+   CREATE PAGE BUTTON
+========================== */
+
+.create-page-button {
+  width: min(320px, 100%);
+  min-height: 75px;
+  padding: 12px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+
+  background: rgba(233, 162, 227, 0.72);
+  border: 1px solid #fddee6;
+  border-radius: 18px;
+
+  color: #41225c;
+  font-size: 17px;
+  font-weight: 800;
+
+  box-shadow: 0 4px 12px rgba(65, 34, 92, 0.16);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.create-page-button img {
+  width: 48px;
+  height: 48px;
+
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Desktop hover */
+
+@media (hover: hover) and (pointer: fine) {
+  .create-page-button:hover {
+    transform: translateY(-3px);
+    background: rgba(233, 162, 227, 0.88);
+  }
+}
+
+/* Touch feedback */
+
+.create-page-button:active {
+  transform: scale(0.98);
+  background: rgba(233, 162, 227, 0.88);
+}
+
+/* Keyboard focus */
+
+.create-page-button:focus-visible {
+  outline: 3px solid #9870a5;
+  outline-offset: 3px;
+}
+
+/* ==========================
+   STATUS
+========================== */
+
+#status {
+  margin: 0;
+  min-height: 18px;
+  max-width: 100%;
+
+  text-align: center;
+  color: #41225c;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 600px) {
+  .create-container {
+    min-height: calc(100vh - 75px);
+    min-height: calc(100svh - 75px);
+
+    gap: 17px;
+    padding: 25px 15px;
+  }
+
+  .create-form {
+    width: min(360px, 100%);
+    padding: 22px;
+    gap: 15px;
+  }
+
+  .create-form h1 {
+    font-size: 32px;
+  }
+
+  .create-form input {
+    min-height: 50px;
+  }
+
+  .create-page-button {
+    width: min(360px, 100%);
+    min-height: 70px;
+
+    padding: 12px 18px;
+    gap: 15px;
+
+    font-size: 15px;
+  }
+
+  .create-page-button img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media (max-width: 360px) {
+  .create-container {
+    padding: 20px 12px;
+  }
+
+  .create-form {
+    padding: 18px;
+  }
+
+  .create-form h1 {
+    font-size: 29px;
+  }
+
+  .create-page-button {
+    padding: 10px 14px;
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .create-page-button img {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ==========================
+   REDUCED MOTION
+========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .create-page-button {
+    transition: none;
+  }
+}

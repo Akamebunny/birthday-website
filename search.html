@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Find a Birthday Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/search.css" />
+  </head>
+
+  <body>
+    <!-- Menu -->
+    <header class="top-bar">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Birthday Whispers" />
+      </a>
+
+      <button
+        id="soundToggle"
+        class="sound-button"
+        type="button"
+        aria-label="Toggle sound"
+      >
+        <img id="soundIcon" src="images/soundon.png" alt="SoundOn" />
+      </button>
+    </header>
+
+    <main class="search-container">
+      <!-- Selecting a birthday -->
+      <div class="search-box">
+        <h1>Find a birthday page</h1>
+
+        <select id="birthdaySelect" required>
+          <option value="" disabled selected>
+            Choose a birthday person...
+          </option>
+        </select>
+
+        <p id="status" role="status"></p>
+      </div>
+      <!-- Going to page- button -->
+      <button type="button" id="visitButton" class="visit-page-button">
+        <img src="images/search.png" alt="" />
+        <span>Visit birthday page</span>
+      </button>
+    </main>
+
+    <script type="module" src="js/home.js"></script>
+    <script type="module" src="js/search.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Birthday Whispers</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+
+  <body>
+    <!-- Menu -->
+    <header class="top-bar">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Birthday Whispers" />
+      </a>
+
+      <button
+        id="soundToggle"
+        class="sound-button"
+        type="button"
+        aria-label="Toggle sound"
+      >
+        <img id="soundIcon" src="images/soundon.png" alt="SoundOn" />
+      </button>
+    </header>
+
+    <main class="home-container">
+      <div class="home-options">
+        <!-- Create page button -->
+        <a href="create.html" class="home-option">
+          <img src="images/magic.png" alt="MagicStick" />
+          <span>Create a birthday page</span>
+        </a>
+        <!-- Search for page- button -->
+        <a href="search.html" class="home-option">
+          <img src="images/search.png" alt="Search" />
+          <span>Find a birthday page</span>
+        </a>
+      </div>
+    </main>
+
+    <script type="module" src="js/home.js"></script>
+  </body>
+</html>

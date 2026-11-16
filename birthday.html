@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Birthday Whispers</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="birthday-page">
+    <!-- Menu -->
+    <header class="top-bar">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Birthday Whispers" />
+      </a>
+
+      <button
+        id="soundToggle"
+        class="sound-button"
+        type="button"
+        aria-label="Toggle sound"
+      >
+        <img id="soundIcon" src="images/soundon.png" alt="SoundOn" />
+      </button>
+    </header>
+
+    <main class="birthday-container">
+      <!-- Birthday name -->
+      <section class="birthday-intro">
+        <h1 id="birthdayName">Loading birthday...</h1>
+      </section>
+      <!-- Count down -->
+      <section class="countdown-frame">
+        <p class="frame-heading">Counting down to your special day</p>
+
+        <div class="countdown-grid" id="countdown">
+          <div class="countdown-item">
+            <span id="days">00</span>
+            <small>Days</small>
+          </div>
+
+          <div class="countdown-item">
+            <span id="hours">00</span>
+            <small>Hours</small>
+          </div>
+
+          <div class="countdown-item">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+          </div>
+
+          <div class="countdown-item">
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+          </div>
+        </div>
+
+        <p id="birthdayToday" class="birthday-today" hidden>
+          It's their birthday today!
+        </p>
+      </section>
+      <!-- Birthday wishes section -->
+      <section class="wishes-frame">
+        <h2>Birthday wishes</h2>
+
+        <p class="section-subtitle">Little messages from people who care</p>
+
+        <div id="messages" class="messages-list">
+          <p class="empty-message">Loading wishes...</p>
+        </div>
+
+        <button
+          id="showMoreButton"
+          class="show-more-button"
+          type="button"
+          aria-expanded="false"
+          hidden
+        >
+          <span id="showMoreText">Show more wishes</span>
+          <span id="showMoreArrow">v</span>
+        </button>
+      </section>
+      <!-- Sending wishes -->
+      <section class="leave-wish-frame">
+        <h2>Leave a little birthday wish</h2>
+
+        <p class="section-subtitle">Send a little happiness their way</p>
+
+        <form id="messageForm">
+          <label for="message">Your birthday message</label>
+
+          <textarea
+            id="message"
+            maxlength="1000"
+            placeholder="Write something sweet..."
+            required
+          ></textarea>
+
+          <label for="hint">
+            A little hint about who you are
+            <span>(optional)</span>
+          </label>
+
+          <input
+            type="text"
+            id="hint"
+            maxlength="200"
+            placeholder="Someone from minecraft..."
+          />
+
+          <button type="submit" class="send-button">Send wish</button>
+
+          <p id="status" class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="page-footer">Made with a little birthday magic</footer>
+
+    <script type="module" src="js/birthday.js"></script>
+  </body>
+</html>

@@ -1,0 +1,775 @@
+/* ==========================
+   GENERAL
+========================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  color: #41225c;
+  position: relative;
+  isolation: isolate;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+/* ==========================
+   FIXED BACKGROUND
+========================== */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background-color: #211735;
+
+  background-image:
+    linear-gradient(rgba(31, 22, 57, 0.18), rgba(31, 22, 57, 0.3)),
+    url("../images/background.png");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.birthday-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  background: transparent;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.top-bar {
+  width: 100%;
+  padding: 8px 7% 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+.top-bar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 7%;
+  width: 86%;
+  height: 1px;
+
+  background: rgba(253, 222, 230, 0.75);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  max-height: 65px;
+  object-fit: contain;
+}
+
+.sound-button {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.sound-button img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.sound-button:focus-visible {
+  outline: 2px solid #fddee6;
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+/* ==========================
+   MAIN CONTENT
+========================== */
+
+.birthday-container {
+  width: min(850px, 90%);
+  margin: 20px auto 35px;
+  text-align: center;
+}
+
+/* ==========================
+   BIRTHDAY GREETING
+========================== */
+
+.birthday-intro {
+  margin-bottom: 25px;
+}
+
+.birthday-intro h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(48px, 8vw, 78px);
+  font-weight: 400;
+
+  color: #e9a2e3;
+
+  -webkit-text-stroke: 0.7px #ffffff;
+
+  text-shadow:
+    0 0 5px #ffffff,
+    0 0 12px rgba(233, 162, 227, 0.9),
+    0 0 25px rgba(233, 162, 227, 0.65);
+
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================
+   COUNTDOWN
+========================== */
+
+.countdown-frame {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 28px;
+  padding: 15px 22px;
+
+  background: rgba(233, 162, 227, 0.82);
+  border: 1px solid #fddee6;
+  border-radius: 28px;
+
+  box-shadow:
+    0 6px 18px rgba(35, 15, 55, 0.25),
+    0 0 10px rgba(253, 222, 230, 0.2);
+}
+
+.frame-heading {
+  display: none;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.countdown-item {
+  flex: 1;
+  min-width: 75px;
+  padding: 3px 12px;
+  position: relative;
+}
+
+.countdown-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  width: 1px;
+  height: 60%;
+
+  background: rgba(253, 222, 230, 0.8);
+}
+
+.countdown-item span {
+  display: block;
+
+  font-family: "Great Vibes", cursive;
+  font-size: 34px;
+  font-weight: 400;
+
+  color: #ffffff;
+  text-shadow: 0 2px 7px rgba(65, 34, 92, 0.25);
+}
+
+.countdown-item small {
+  display: block;
+
+  font-family: "Great Vibes", cursive;
+  font-size: 19px;
+  color: #ffffff;
+}
+
+.birthday-today {
+  color: #ffffff;
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+/* ==========================
+   WISHES FRAME
+========================== */
+
+.wishes-frame {
+  background: rgba(245, 197, 241, 0.9);
+
+  border: 1px solid #fddee6;
+  border-radius: 28px;
+
+  padding: 30px;
+  margin-bottom: 28px;
+
+  box-shadow:
+    0 8px 25px rgba(35, 15, 55, 0.25),
+    0 0 12px rgba(253, 222, 230, 0.2);
+}
+
+.wishes-frame h2,
+.leave-wish-frame h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 42px;
+  font-weight: 400;
+
+  color: #41225c;
+
+  text-shadow:
+    0 0 4px #f5c5f1,
+    0 0 10px rgba(245, 197, 241, 0.9);
+
+  margin: 0;
+}
+
+.section-subtitle {
+  color: #41225c;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 8px 0 25px;
+}
+
+/* ==========================
+   MAGICAL WISH CARDS
+========================== */
+
+.messages-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.message-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 190px;
+  padding: 30px 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: rgba(248, 225, 231, 0.96);
+
+  border: 1px solid #fddee6;
+  border-radius: 20px;
+
+  color: #41225c;
+  text-align: center;
+
+  box-shadow:
+    0 5px 15px rgba(65, 34, 92, 0.15),
+    0 0 12px rgba(233, 162, 227, 0.25);
+
+  overflow-wrap: anywhere;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .message-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+      0 10px 22px rgba(65, 34, 92, 0.2),
+      0 0 18px rgba(233, 162, 227, 0.45);
+  }
+}
+
+.message-card::before {
+  content: none;
+}
+
+.message-text {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+
+  margin: 0 0 18px;
+
+  color: #41225c;
+  overflow-wrap: anywhere;
+}
+
+.message-hint {
+  font-family: "Great Vibes", cursive;
+  font-size: 19px;
+  color: #9870a5;
+
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.empty-message {
+  grid-column: 1 / -1;
+  color: #41225c;
+  padding: 20px;
+}
+
+/* ==========================
+   SHOW MORE BUTTON
+========================== */
+
+.show-more-button {
+  margin-top: 22px;
+  padding: 10px 22px;
+  min-height: 44px;
+
+  border: 1px solid #fddee6;
+  border-radius: 30px;
+
+  background: rgba(248, 225, 231, 0.8);
+  color: #41225c;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  box-shadow: 0 4px 10px rgba(65, 34, 92, 0.12);
+
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: 0.2s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .show-more-button:hover {
+    background: #f8e1e7;
+    box-shadow: 0 5px 14px rgba(65, 34, 92, 0.2);
+  }
+}
+
+.show-more-button:active {
+  transform: scale(0.97);
+}
+
+.show-more-button:focus-visible {
+  outline: 2px solid #9870a5;
+  outline-offset: 3px;
+}
+
+#showMoreArrow {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+/* ==========================
+   LEAVE A WISH FRAME
+========================== */
+
+.leave-wish-frame {
+  width: min(650px, 100%);
+  margin: 0 auto 28px;
+  padding: 25px 30px;
+
+  background: rgba(245, 197, 241, 0.9);
+
+  border: 1px solid #fddee6;
+  border-radius: 28px;
+
+  box-shadow:
+    0 8px 25px rgba(35, 15, 55, 0.25),
+    0 0 12px rgba(253, 222, 230, 0.2);
+}
+
+.leave-wish-frame h2 {
+  font-size: 36px;
+}
+
+.leave-wish-frame .section-subtitle {
+  margin-bottom: 15px;
+}
+
+.leave-wish-frame form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: left;
+}
+
+.leave-wish-frame label {
+  color: #41225c;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.leave-wish-frame label span {
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.leave-wish-frame textarea,
+.leave-wish-frame input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 13px;
+
+  border: 1px solid #fddee6;
+  border-radius: 12px;
+
+  background: #f8e1e7;
+  color: #41225c;
+
+  font-family: inherit;
+  font-size: 16px;
+
+  outline: none;
+
+  box-shadow: 0 3px 9px rgba(65, 34, 92, 0.12);
+}
+
+.leave-wish-frame textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.leave-wish-frame textarea::placeholder,
+.leave-wish-frame input::placeholder {
+  color: #987b98;
+}
+
+.leave-wish-frame textarea:focus,
+.leave-wish-frame input:focus {
+  border-color: #e9a2e3;
+
+  box-shadow:
+    0 0 0 3px rgba(233, 162, 227, 0.25),
+    0 3px 9px rgba(65, 34, 92, 0.12);
+}
+
+.send-button {
+  align-self: center;
+
+  margin-top: 10px;
+  padding: 10px 27px;
+  min-height: 44px;
+
+  border: 1px solid #fddee6;
+  border-radius: 30px;
+
+  background: #e9a2e3;
+  color: #41225c;
+
+  font-weight: 800;
+  font-size: 14px;
+
+  box-shadow: 0 4px 12px rgba(65, 34, 92, 0.2);
+
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: 0.2s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .send-button:hover {
+    background: #f8e1e7;
+  }
+}
+
+.send-button:active {
+  transform: scale(0.97);
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.send-button:focus-visible {
+  outline: 2px solid #9870a5;
+  outline-offset: 3px;
+}
+
+.form-status {
+  text-align: center;
+  color: #41225c;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.page-footer {
+  text-align: center;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 10px 10px 20px;
+
+  text-shadow: 0 2px 6px rgba(35, 15, 55, 0.5);
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 700px) {
+  .messages-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .message-card {
+    min-height: 165px;
+    padding: 22px 15px;
+  }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 600px) {
+  body::before {
+    background-image:
+      linear-gradient(rgba(31, 22, 57, 0.18), rgba(31, 22, 57, 0.3)),
+      url("../images/phonebackground.png");
+  }
+
+  .top-bar {
+    padding: 8px 5% 5px;
+  }
+
+  .top-bar::after {
+    left: 5%;
+    width: 90%;
+  }
+
+  .logo img {
+    width: 150px;
+    max-height: 55px;
+  }
+
+  .sound-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .sound-button img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .birthday-container {
+    width: 92%;
+    margin: 20px auto 28px;
+  }
+
+  .birthday-intro {
+    margin-bottom: 20px;
+  }
+
+  .birthday-intro h1 {
+    font-size: clamp(42px, 12vw, 62px);
+  }
+
+  .countdown-frame {
+    width: fit-content;
+    max-width: 100%;
+    padding: 12px 8px;
+    margin-bottom: 22px;
+  }
+
+  .countdown-item {
+    min-width: 0;
+    flex: 1 1 0;
+    padding: 3px 8px;
+  }
+
+  .countdown-item span {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .countdown-item small {
+    font-size: clamp(14px, 4vw, 17px);
+  }
+
+  .birthday-today {
+    font-size: 27px;
+  }
+
+  .wishes-frame {
+    padding: 22px 16px;
+    border-radius: 24px;
+    margin-bottom: 22px;
+  }
+
+  .wishes-frame h2 {
+    font-size: 37px;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .messages-list {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .message-card {
+    min-height: 135px;
+    padding: 22px 18px;
+  }
+
+  .message-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .message-hint {
+    font-size: 19px;
+  }
+
+  .show-more-button {
+    margin-top: 18px;
+  }
+
+  .leave-wish-frame {
+    width: 100%;
+    padding: 22px 17px;
+    border-radius: 24px;
+    margin-bottom: 22px;
+  }
+
+  .leave-wish-frame h2 {
+    font-size: 32px;
+  }
+
+  .leave-wish-frame .section-subtitle {
+    margin-bottom: 15px;
+  }
+
+  .leave-wish-frame textarea,
+  .leave-wish-frame input {
+    font-size: 16px;
+  }
+
+  .leave-wish-frame textarea {
+    min-height: 110px;
+  }
+
+  .send-button {
+    width: min(220px, 100%);
+    min-height: 46px;
+  }
+
+  .page-footer {
+    padding: 10px 15px 20px;
+  }
+}
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media (max-width: 360px) {
+  .top-bar {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .logo img {
+    width: 125px;
+  }
+
+  .birthday-container {
+    width: 94%;
+  }
+
+  .birthday-intro h1 {
+    font-size: 42px;
+  }
+
+  .countdown-frame {
+    padding: 10px 5px;
+  }
+
+  .countdown-item {
+    padding: 3px 5px;
+  }
+
+  .countdown-item span {
+    font-size: 23px;
+  }
+
+  .countdown-item small {
+    font-size: 13px;
+  }
+
+  .wishes-frame {
+    padding: 20px 12px;
+  }
+
+  .leave-wish-frame {
+    padding: 20px 13px;
+  }
+
+  .leave-wish-frame h2 {
+    font-size: 29px;
+  }
+}
+
+/* ==========================
+   REDUCED MOTION
+========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .message-card,
+  .show-more-button,
+  .send-button {
+    transition: none;
+  }
+}
